@@ -14,12 +14,7 @@ client.once("ready", () => {
 });
 
 client.on("interactionCreate", (msg) => {
-  console.log("xd");
-  /*
-  if (message.content === "miau") {
-    message.reply("Miau miau!");
-  }
-*/
+  console.log("Working!");
 });
 
 client.login(config.token);
