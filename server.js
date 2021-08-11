@@ -1,6 +1,7 @@
 const { Client, Intents } = require("discord.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-require("dotenv-flow").config();
+const dotenv = require("dotenv-flow");
+dotenv.config();
 
 const config = {
   token: process.env.DISCORD_TOKEN,
@@ -8,14 +9,17 @@ const config = {
   prefix: process.env.PREFIX,
 };
 
-client.on("ready", () => {
-  console.log(`Loogged in as ${client.user.tag}`);
+client.once("ready", () => {
+  console.log(`Logged in as ${client.user.tag} :3`);
 });
 
-client.on("message", (msg) => {
-  if (msg.content === "ping") {
-    msg.reply("pong");
+client.on("interactionCreate", (msg) => {
+  console.log("xd");
+  /*
+  if (message.content === "miau") {
+    message.reply("Miau miau!");
   }
+*/
 });
 
 client.login(config.token);
